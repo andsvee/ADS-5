@@ -16,11 +16,11 @@ class TStack {
         topper--;
     }
     void push(T item) {
-      if (top < size - 1)
+      if (topper < size - 1)
         stackArray[++topper] = item;
     }
     T get() const {
-      return stackArray[top];
+      return stackArray[topper];
     }
     bool checkEmpty() const {
       return topper == -1;
