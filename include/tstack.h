@@ -4,29 +4,26 @@
 
 template<typename T, int size>
 class TStack {
-  // добавьте код стека
  private:
-    T *arr;
-    int tIndex;
+    T* stackArray;
+    int topper;
  public:
-    TStack() {
-        arr = new T[size];
-        tIndex = -1;
+    TStack() : topper(-1) {
+      stackArray = new T[size];
     }
-    bool isEmpty() {
-        return tIndex == -1;
+    void pop() {
+      if (topper >= 0)
+        topper--;
     }
-    void push(T value) {
-        arr[++tIndex] = value;
+    void push(T item) {
+      if (top < size - 1)
+        stackArray[++topper] = item;
     }
-    T& pop() {
-        return arr[tIndex--];
+    T get() const {
+      return stackArray[top];
     }
-    bool isFull() const {
-        return tIndex == size;
-    }
-    T& get() const {
-        return arr[tIndex];
+    bool checkEmpty() const {
+      return topper == -1;
     }
 };
 
