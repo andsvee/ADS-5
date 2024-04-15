@@ -4,7 +4,6 @@
 
 template<typename T, int size>
 class TStack {
-  // добавьте код стека
  private:
     T *arr;
     int tIndex;
