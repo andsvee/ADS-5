@@ -6,25 +6,27 @@ template<typename T, int size>
 class TStack {
   // добавьте код стека
  private:
-    T* stackArray;
-    int top;
+    T *arr;
+    int tIndex;
  public:
-    TStack() : top(-1) {
-      stackArray = new T[size];
+    TStack() {
+        arr = new T[size];
+        tIndex = -1;
     }
-    void pop() {
-      if (top >= 0)
-        top--;
+    bool isEmpty() {
+        return tIndex == -1;
     }
-    void push(T item) {
-      if (top < size - 1)
-        stackArray[++top] = item;
+    void push(T value) {
+        arr[++tIndex] = value;
     }
-    T get() const {
-      return stackArray[top];
+    T& pop() {
+        return arr[tIndex--];
     }
-    bool checkEmpty() const {
-      return top == -1;
+    bool isFull() const {
+        return tIndex == size;
+    }
+    T& get() const {
+        return arr[tIndex];
     }
 };
 
