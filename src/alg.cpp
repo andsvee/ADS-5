@@ -32,7 +32,7 @@ std::string infx2pstfx(std::string inf) {
         continue;
       }
       novy = novy + ' ' + t;
-    } else if (operat(t)) {
+    } else if (Ope(t)) {
       if (t == '(') {
         stack1.push(t);
       } else if (stack1.checkEmpty()) {
@@ -70,7 +70,7 @@ int eval(std::string pref) {
   for (char t : pref) {
     if (di(t)) {
       stack2.push(t - '0');
-    } else if (operat(t)) {
+    } else if (Ope(t)) {
       int u = stack2.get();
       stack2.pop();
       int o = stack2.get();
